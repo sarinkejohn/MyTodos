@@ -35,9 +35,7 @@ public class User {
 2️⃣ Repository Layer (Data Access)
 Handles database interactions using JpaRepository.
 
-java
-Copy
-Edit
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -47,9 +45,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 3️⃣ Service Layer (Business Logic)
 Encapsulates business logic and interacts with the repository layer.
 
-java
-Copy
-Edit
+
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -88,9 +84,7 @@ public class UserService {
 4️⃣ Controller Layer (REST API)
 Exposes CRUD endpoints.
 
-java
-Copy
-Edit
+
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -133,9 +127,7 @@ public class UserController {
 📍 1. Data Validation
 Use Jakarta Validation API to enforce field constraints.
 
-java
-Copy
-Edit
+
 import jakarta.validation.constraints.*;
 
 public class UserDTO {
@@ -152,9 +144,7 @@ public class UserDTO {
 📍 2. Exception Handling
 Centralized exception handling using @ControllerAdvice.
 
-java
-Copy
-Edit
+
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -168,9 +158,7 @@ public class GlobalExceptionHandler {
 📍 3. Pagination and Sorting
 Enhance API efficiency with Pageable.
 
-java
-Copy
-Edit
+
 import org.springframework.data.domain.*;
 
 @GetMapping("/users/paginated")
@@ -180,9 +168,7 @@ public Page<User> getUsersPaginated(@RequestParam int page, @RequestParam int si
 📍 4. Security (JWT & OAuth)
 Secure API endpoints with Spring Security & JWT.
 
-java
-Copy
-Edit
+
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
@@ -195,9 +181,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 🧪 CRUD Testing (Unit & Integration)
 Write JUnit tests for API reliability.
 
-java
-Copy
-Edit
+
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
